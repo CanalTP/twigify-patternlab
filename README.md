@@ -2,7 +2,7 @@ twigify-patternlab
 =======
 
 `twigify-patternlab` is a [Browserify](https://github.com/substack/node-browserify) transform for creating modules of pre-compiled [Twig.js](https://github.com/justjohn/twig.js) templates.
-This module is a fork of [twigify](https://github.com/dane-harnett/twigify) wich support [Pattern Lab](http://patternlab.io/) include syntax 
+This module is a fork of [twigify](https://github.com/dane-harnett/twigify) wich support [Pattern Lab](http://patternlab.io/) include syntax [patternType]-[patternName]
 
 ### Installation ###
 With [`npm`](http://npmjs.org/) as a local development dependency:
@@ -37,7 +37,7 @@ In `patterns/00-molecules/01-alert/warning.twig`:
 
 In `warning.js`:
 ```js
-// need to require() this so that it is available for main.twig
+// need to require() this so that it is available for warning.twig
 require('./patterns/00-atoms/00-globals/title.twig');
 var mainTemplate = require('./patterns/00-molecules/01-alert/warning.twig');
 
