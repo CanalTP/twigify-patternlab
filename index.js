@@ -7,9 +7,14 @@ var ext = /\.(twig)$/;
 
 function compile(id, str) {
   var template = twig({
-    id: id,
-    data: str
+    ref: id
   });
+  if (!template) {
+    template = twig({
+      id: id,
+      data: str
+    });
+  }
 
   var tokens = JSON.stringify(template.tokens);
 
