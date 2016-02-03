@@ -2,27 +2,19 @@
 
 var twig    = require('twig').twig;
 var through = require('through2');
-var minify  = require('html-minifier').minify;
 
 var ext = /\.(twig)$/;
 
-var minifyDefaults = {
-  removeComments: true,
-  collapseWhitespace: true
-};
-
 function compile(id, str) {
-  var minified = minify(str, minifyDefaults);
-
   var template = twig({
     id: id,
-    data: minified
+    data: str
   });
 
   var tokens = JSON.stringify(template.tokens);
 
   // the id will be the filename and path relative to the require()ing module
-  return 'twig({ id: __filename,  data:' + tokens + ', precompiled: true, allowInlineIncludes: true })';
+  return 'twig({ id: "' + getRefName(id) + '", data:' + tokens + ', precompiled: true, allowInlineIncludes: true })';
 }
 
 function process(source) {
@@ -62,6 +54,16 @@ function twigify(file, opts) {
   }
 
   return through(push, end);
+}
+
+function getRefName(path) {
+    var refName = path;
+    var match = path.match(/\/(\d{2}-)?(atoms|molecules|organisms|templates|pages)\/(.*\/)?(\d{2}-)?(.+)\.twig/);
+    if (match) {
+        refName = match[2] + '-' + match[5];
+    }
+
+    return refName;
 }
 
 module.exports = twigify;
