@@ -1,28 +1,30 @@
 {
-  "name": "twigify",
+  "name": "twigify-patternlab",
   "version": "0.0.3",
-  "description": "Browserify transform for pre-compiled Twig.js templates (with HTML minification)",
+  "description": "Browserify transform for pre-compiled Twig.js templates with patternlab naming",
   "keywords": [
     "template",
     "browserify",
     "browserify-transform",
     "transform",
-    "minifier",
-    "minify",
     "twig",
     "twigjs",
-    "twig.js"
+    "twig.js",
+    "Pattern Lab",
+    "Atomic Web Design"
   ],
-  "homepage": "https://github.com/dane-harnett/twigify",
-  "author": "Dane Harnett <dane@daneharnett.com>",
-  "bugs": "https://github.com/dane-harnett/twigify/issues",
-  "license": "MIT",
+  "homepage": "https://github.com/CanalTP/twigify-patternlab",
+  "author": {
+    "name" : "Johan Rouve",
+    "email" : "johan.rouve@kisio.org"
+  },
+  "bugs": "https://github.com/CanalTP/twigify-patternlab/issues",
+  "license": "AGPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dane-harnett/twigify.git"
+    "url": "git@github.com:CanalTP/twigify-patternlab.git"
   },
   "dependencies": {
-    "html-minifier": "^0.6.9",
     "through2": "^0.6.3",
     "twig": "^0.7.2"
   },
