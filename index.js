@@ -9,10 +9,11 @@ function compile(id, str) {
   var template = twig({
     ref: id
   });
+  var minified = minifyTwig(str.toString());
   if (!template) {
     template = twig({
       id: id,
-      data: str
+      data: minified
     });
   }
 
@@ -69,6 +70,10 @@ function getRefName(path) {
     }
 
     return refName;
+}
+
+function minifyTwig(str) {
+    return str.replace(new RegExp('\\n+ *', 'g'), '');
 }
 
 module.exports = twigify;
