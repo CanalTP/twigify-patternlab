@@ -1,6 +1,6 @@
 {
   "name": "twigify-patternlab",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Browserify transform for pre-compiled Twig.js templates with patternlab naming",
   "keywords": [
     "template",
@@ -15,8 +15,8 @@
   ],
   "homepage": "https://github.com/CanalTP/twigify-patternlab",
   "author": {
-    "name" : "Johan Rouve",
-    "email" : "johan.rouve@kisio.org"
+    "name": "Johan Rouve",
+    "email": "johan.rouve@kisio.org"
   },
   "bugs": "https://github.com/CanalTP/twigify-patternlab/issues",
   "license": "AGPL-3.0",
